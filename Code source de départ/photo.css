@@ -1,0 +1,29 @@
+ul{
+	display: flex;
+	flex-wrap: wrap;
+	list-style:none ;
+	transition: background-color 0.8s;
+}
+
+li{
+	width:13%;
+	padding:0.5em;
+	margin:1em;
+}
+
+body{
+	width:800px;
+}
+
+span{
+	font-weight: bold;
+	color: red;
+}
+
+li:hover {
+	background-color:silver;
+}
+
+#photo-list li.selected {
+	background-color: forestgreen;
+}
