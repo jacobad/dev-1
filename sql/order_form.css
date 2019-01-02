@@ -1,0 +1,42 @@
+body{
+	
+	width:900px;
+	margin: auto;
+	background-color: #f8fff2;
+}
+h2{
+	color: #27948a;
+	text-align:center;
+}
+
+.center{
+	text-align:center;
+}
+div{
+	text-align: right;
+}
+
+th{
+	color:#27948a;
+}
+
+table tr:nth-child(even){
+	background-color:grey;
+
+}
+
+td{
+	width:25%;
+	margin: 0;
+
+}
+
+
+table{
+	width:100%;
+	text-align: center;
+	border-collapse: collapse;
+}
+.col{
+	text-align: right;
+}
