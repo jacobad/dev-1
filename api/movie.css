@@ -1,0 +1,21 @@
+section {
+
+	display:flex;
+	justify-content:space-between;
+	
+}
+form{
+	width:100%;
+}
+div {
+	width:25%;
+}
+.target{
+	width:45%;
+	border:2px  black solid;
+	border-radius:1%;
+}
+
+ul{
+	
+}

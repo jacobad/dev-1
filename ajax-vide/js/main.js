@@ -12,5 +12,5 @@
  * d'évènements pour l'évènement JavaScript natif DOMContentLoaded.
  */
 
-
+console.log('la');
 $('#run').on('click',changeHtml);
