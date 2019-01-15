@@ -1,0 +1,10 @@
+<ul>
+	<?php foreach ($post as $info ) : ?>
+		
+		<li><a href="article.php?id=<?=$info['Id'] ?>"><?= htmlspecialchars($info['Title']) ?></a></li>
+		<li><?= htmlspecialchars($info['Contents']) ?></li>
+		<li>Redigé par <?=htmlspecialchars($info['FirstName'].'  '.$info['LastName'] .' '.$info['CreationDate']) ?></li>
+
+	<?php endforeach ?>
+
+</ul>

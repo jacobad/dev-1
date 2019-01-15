@@ -1,0 +1,43 @@
+<ul>
+	<li><?= htmlspecialchars($articles['Title']) ?></li>
+		<li><?= substr(htmlspecialchars($articles['Contents']),0,100) ?></li>
+		<li>Redigé par <?=htmlspecialchars($articles['FirstName'].'  '.$articles['LastName'] .' '.$articles['CreationDate']) ?></li>
+
+</ul>
+
+<ul>
+	<?php foreach($comment as $com) :?>
+		<li> redigé par : <?=htmlspecialchars( $com['Pseudo']) ?></li>
+		<li> <?= htmlspecialchars($com['Contents'] )?></li>
+	<?php endforeach ?>
+</ul>
+
+
+
+
+<form class="generic-form" action="article.php?id=<?=$_GET['id']?>" method="POST">
+
+    <!-- Utilisation d'un champ caché pour spécifier à quel article rattacher le commentaire -->
+    <input type="hidden" name="postId" value="<?=$_GET['id']?>">
+
+    <fieldset>
+        <legend><i class="fa fa-comment-o"></i> Nouveau commentaire</legend>
+        <ul>
+            <li>
+                <label for="nickName">Pseudo :</label>
+                <input type="text" id="nickName" name="nickName">
+            </li>
+            <li>
+                <label class="textarea" for="contents">Commentaire :</label>
+                <textarea id="contents" name="contents" rows="5"></textarea>
+            </li>
+            <li>
+                <button class="button button-primary" type="submit">Ajouter</button>
+                <a class="button button-cancel" href="index.php">Annuler</a>
+            </li>
+        </ul>
+    </fieldset>
+</form>
+
+
+

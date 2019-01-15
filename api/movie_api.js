@@ -21,8 +21,13 @@ function show_movieDetails (response){
 		$('#target2').append('<ul>');
 		for(var i = 0; i < response.production_companies.length; i++) {
     
-    	show_companiesDetails(response.production_companies[i].id);
-        
+
+			var query = response.production_companies[i].id
+   
+	$.getJSON('https://api.themoviedb.org/3/company/'+query+'?api_key=2ee2c5b569240ea2a2a879dd9c8a822c',show_companiesDetails);
+
+  	show_companiesDetails(response.production_companies[i].id);
+   
     }
     
 		

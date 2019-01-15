@@ -1,0 +1,21 @@
+
+<!-- Page d'ajout d'un article -->
+<h2><i class="fa fa-pencil"></i> Connectez vous </h2>
+
+<?php if ($error == true ) {?>
+<div class="popup">
+    <p> <?= $message ?></p>
+</div>
+<?php } ?>
+
+
+<form action="login.php" method="POST">
+	<ul>
+	
+		<li><label for="mail">mail</label>
+		<li><input id = "mail" type="text" name="mail"></li>
+		
+		<li><label for="password">mot de passe</label>
+		<li><input id = "password" type="text" name="password"></li>
+		<li><button type="submit"><a>connexion</a></button>
+	</ul>

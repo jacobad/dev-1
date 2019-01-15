@@ -1,0 +1,91 @@
+
+<h1>Panneau d'administration</h1>
+
+<a href="add_Post.php">Rediger un nouvel Article</a>
+
+<table>
+	<thead>
+		<tr>
+			<th>Titre</th>
+			<th>Article</th>
+			<th>Auteur</th>
+			<th>Categorie</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($post as $info) :?>
+			<tr>
+				<td><?=$info['Title']?></td>
+				<td><?= $info['Contents'] ?></td>
+				<td><?=$info['FirstName'].'  '.$info['LastName']?></td>
+				<td><?=$info['Name']?></td>
+				<td><a href="edit_post.php?id=<?=$info['Id']?>"><i class="fa fa-pencil"></i></a></td>
+				<td><a href="delete_post.php?id=<?=$info['Id']?>"><i class="fa fa-remove"></i></a></td>
+			</tr>
+		<?php endforeach ?>
+	</tbody>
+</table>
+
+
+
+<h1>Auteurs</h1>
+
+
+	<table>
+	<thead>
+		<tr>
+			
+			<th>Auteur</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($post as $info) :?>
+			<tr>
+		
+				<td><?=$info['FirstName'].'  '.$info['LastName']?></td>
+				
+				<td><a href="add_category.php?id=<?=$info['Id']?>"><i class="fa fa-pencil"></i></a></td>
+				<td><a href="delete_Author.php?id=<?=$info['Id']?>"><i class="fa fa-remove"></i></a></td>
+			</tr>
+		<?php endforeach ?>
+	</tbody>
+</table>
+<form action="add_authors.php" method="POST">
+	<label for="firstName_author">nom auteur</label>
+	<input id="firstName_author" type="text" name="firstName_author">
+	<label for="lastName_author">prenom auteur</label>
+	<input id="lastName_author" type="text" name="lastName_author">
+	<button type="submit">changer</button>
+
+</form>
+
+<h1> category </h1>
+
+	<table>
+	<thead>
+		<tr>
+			
+			<th>Categorie</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($category as $info) :?>
+			<tr>
+				
+				<td><?=$info['Name']?></td>
+				
+				<td><a href="delete_category.php?id=<?=$info['Id']?>"><i class="fa fa-remove"></i></a></td>
+			</tr>
+
+		<?php endforeach ?>
+
+	</tbody>
+
+</table>
+<form action="admin.php" method="POST">
+	<label for="nom_cat">nom category</label>
+	<input id="nom_cat" type="text" name="nom_cat">
+	<button type="submit">changer</button>
+
+</form>
