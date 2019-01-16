@@ -52,10 +52,19 @@ $query = $pdo->prepare     // requetes sql
 $query->execute( [$_POST['firstName_author'],$_POST['lastName_author']] );  // execute la requete
 
 
+$query = $pdo->prepare     // requetes sql
+(
+	'SELECT * FROM users
+	'
+); 	
 
+
+$query->execute();  // execute la requete
+
+
+$users= $query->fetchAll(PDO::FETCH_ASSOC); // on affecte la requete a une variable;  fetchAll permet de ranger les données dans un tableau , fetch permet de stocker une valeur,
 
 }
-
 
 
 $template = 'admin';

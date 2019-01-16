@@ -1,6 +1,7 @@
 <?php 
 session_start();
 
+include 'application_hash.php';
 if (!empty($_POST)) {
 	var_dump($_POST);
 
@@ -20,7 +21,7 @@ if (!empty($_POST)) {
     $user = $query->fetch(PDO::FETCH_ASSOC);
 
     var_dump($user);
-	if( $user['psw'] == $_POST['password'] ) {
+	if( verifyPassword($_POST['password'], $user['psw'] )== true ) {
     
     	var_dump('connecté');
     	$_SESSION['firstName'] = $user['firstName'];
@@ -31,7 +32,7 @@ if (!empty($_POST)) {
 		$_SESSION['role'] = $user['role'];
 
 		var_dump($_SESSION);
-		header('Location: index.php');
+		header('Location: blog_home.php');
 		exit();
     
         

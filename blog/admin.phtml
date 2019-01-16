@@ -89,3 +89,35 @@
 	<button type="submit">changer</button>
 
 </form>
+<table>
+	<thead>
+		<tr>
+			
+			<th>Categorie</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($users as $info) :?>
+			<tr>
+				
+				<td><?=$info['firstName']?></td>
+				<td><?=$info['lastName']?></td>
+				
+				
+				<td><a href="delete_category.php?id=<?=$info['Id']?>"><i class="fa fa-remove"></i></a></td>
+			</tr>
+
+		<?php endforeach ?>
+
+	</tbody>
+<form action="change_role.php" method="POST">
+	<label for="role">role</label>
+	 <select id="role" name="role">
+	 	<option value="<?=$user['Id']?>">user</option>
+	 	<option value="<?=$user['Id']?>">admin</option>
+	<button type="submit">changer</button>
+
+</form>
+
+
+
