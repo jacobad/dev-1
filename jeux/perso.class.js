@@ -11,7 +11,7 @@ perso.prototype.attaque = function(perso){
 		var degats = this.ptsAttaque - this.ptsDef;
 		if (degats < 10) {
 		
-		console.log(perso.name +'ne sent plus rien....' );
+		console.log(perso.nom +'ne sent plus rien....' );
 		degats = 10
 	}
 	perso.pv -= degats
@@ -21,7 +21,7 @@ perso.prototype.attaque = function(perso){
 	console.log(perso.nom +' a  '+ perso.pv+ ' hp' );
 }
 
-perso.prototype.magie = function (objet){
+perso.prototype.magie = function (perso){
 		if (this.ptsMagique > 0) {
 		var degats = getRandomInteger(1, this.ptsMagique);
 		console.log(this.nom +  ' jete un sort,il enlève '+ degats + ' hp a '+ perso.nom);
