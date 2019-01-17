@@ -1,0 +1,52 @@
+.image{
+	display:flex;
+	justify-content: space-around;
+}
+
+
+#jacob {
+	width:50px;
+	height:50px;
+	animation-duration: 5s;
+  animation-name: slidein;
+
+}
+
+#fabien{
+	width:50px;
+	height:50px;
+}
+
+
+.button{
+	display:flex;
+	justify-content: space-between;
+}
+
+.attaque{
+	transform:translateX(100px);
+}
+
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 50px; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 50px;
+  }
+
+
+@keyframes slideRight{
+	from{
+		margin-right: 50%;
+
+	}
+	to{
+		margin-right:25%;
+		width:70px;
+	}
+}

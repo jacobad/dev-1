@@ -2,7 +2,7 @@
 $('#defendre').on('click',defendre);
 $('#sort').on('click',sort);*/
 
-var perso1 = new perso('jacob','400','50','20','60');
+/*var perso1 = new perso('jacob','400','50','20','60');
 
 var perso2 = new perso('fabien','500','50','19','50');
 
@@ -37,4 +37,7 @@ function sort (perso,pv){
 
 function aleatoire(){
 	
-}
+}*/
+
+
+

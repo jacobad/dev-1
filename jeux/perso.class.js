@@ -21,7 +21,7 @@ perso.prototype.attaque = function(perso){
 	console.log(perso.nom +' a  '+ perso.pv+ ' hp' );
 }
 
-perso.prototype.magie = function (objet){
+perso.prototype.magie = function (perso){
 		if (this.ptsMagique > 0) {
 		var degats = getRandomInteger(1, this.ptsMagique);
 		console.log(this.nom +  ' jete un sort,il enlève '+ degats + ' hp a '+ perso.nom);
@@ -40,12 +40,12 @@ perso.prototype.defense = function(){
 		this.ptsDef += ratio/2;
 
 		console.log(this.nom +'a une defense à :'+ this.ptsDef);
+
 }
+perso.prototype.afficher = function(perso){
 
-
-perso.prototype.affichage = function() {
-
-	$('#affiche').html('<p>'+this.nom+' pv=  '+this.pv+' attaque =  '+ this.ptsAttaque +' defense= '+ this.ptsDef +' magie = '+ this.ptsMagique +'</p>');
+	$('#perso1').html('<p>'+this.nom+' pv=  '+this.pv+' attaque =  '+ this.ptsAttaque +' defense= '+ this.ptsDef +' magie = '+ this.ptsMagique +'</p>');
+	$('#perso2').html('<p>'+perso.nom+' pv=  '+perso.pv+' attaque =  '+ perso.ptsAttaque +' defense= '+ perso.ptsDef +' magie = '+ perso.ptsMagique +'</p>');
 		
-
 }
+
