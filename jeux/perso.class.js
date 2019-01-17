@@ -11,7 +11,7 @@ perso.prototype.attaque = function(perso){
 		var degats = this.ptsAttaque - this.ptsDef;
 		if (degats < 10) {
 		
-		console.log(perso.name +'ne sent plus rien....' );
+		console.log(perso.nom +'ne sent plus rien....' );
 		degats = 10
 	}
 	perso.pv -= degats

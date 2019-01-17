@@ -13,6 +13,7 @@ Program.prototype.onClickAttaque = function(event) {
 
 
 	console.log(this);
+<<<<<<< HEAD
 
 	this.jacob.attaque(this.fabien);
 	$('.image #jacob').addClass("attaque");
@@ -68,6 +69,60 @@ Program.prototype.onClickSort = function(event){
 Program.prototype.fabienAttaque = function(){
 	var choice = getRandomInteger(0, 3);
 
+=======
+	this.jacob.attaque(this.fabien);
+
+	var choice = getRandomInteger(0, 3);
+	
+if(choice == 1){
+		this.fabien.attaque(this.jacob);
+	}else if(choice == 2){
+		this.fabien.defense();
+	}else{
+		this.fabien.magie(this.jacob);
+	}
+
+
+}
+
+Program.prototype.onClickDefend = function(event){
+	event.preventDefault();
+	this.jacob.defense();
+
+	var choice = getRandomInteger(0, 3);
+
+	if(choice == 1){
+		this.fabien.attaque(this.jacob);
+	}else if(choice == 2){
+		this.fabien.defense();
+	}else{
+		this.fabien.magie(this.jacob);
+	}
+}
+
+
+Program.prototype.onClickSort = function(event){
+	event.preventDefault();
+
+	this.jacob.magie(this.fabien);
+
+	var choice = getRandomInteger(0, 3);
+	if(choice == 1){
+		this.fabien.attaque(this.jacob);
+	}else if(choice == 2){
+		this.fabien.defense();
+	}else{
+		this.fabien.magie(this.jacob);
+	}
+}
+
+
+
+
+/*function fabien(){
+	var choice = getRandomInteger(0, 3);
+
+>>>>>>> dae2cc975741098fa62b8f3ed6b1c4a775b159f2
 	if(choice == 1){
 		this.fabien.attaque(this.jacob);
 	}else if(choice == 2){
@@ -76,6 +131,7 @@ Program.prototype.fabienAttaque = function(){
 		this.fabien.magie(this.jacob);
 	}
  
+<<<<<<< HEAD
 }
 
 Program.prototype.afficher = function(perso){
@@ -95,3 +151,6 @@ Program.prototype.stop = function(){
 }
 
 
+=======
+}*/
+>>>>>>> dae2cc975741098fa62b8f3ed6b1c4a775b159f2
