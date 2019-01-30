@@ -60,7 +60,53 @@ class Time {
     }
 
     public function timer($second, $minute ,$hour){
-    	if($second = )
+        
+        if($second > 59){
+        $restSecond = $second%60;
+        $resultSecond = (int)($second / 60) ;
+        $this->seconds = $restSecond;
+        $this->minutes = $resultSecond + $minute;
+
+         echo  $this->seconds. ':'.$this->minutes.':'.$this->hours;
+
+         var_dump('1');
+        if($this->minutes > 59){
+                $restMinutes = $minute % 60;
+                $resultMinutes = (int)($minute/60);
+                $this->minutes = $restMinutes;
+                $this->hours = $resultMinutes+ $hour;
+
+                 echo  $this->seconds. ':' .$this->minutes.':'  .$this->hours;
+
+                 var_dump('je ne comp'.$this->minutes);
+
+            }
+
+        }else if($minute > 59){
+            $restMinutes = $minute % 60;
+                $resultMinutes = (int)($minute/60);
+                $this->minutes = $restMinutes;
+                $this->hours = $resultMinutes + $hour;
+
+                 echo  $this->seconds. ':' .$this->minutes.':'  .$this->hours;
+                 
+        }
+
+
+
+        else{
+
+            $this->seconds = $second ;
+            $this->minutes = $minute ;
+            $this->hours = $hour ;
+
+            echo  $this->seconds. ':' .$this->minutes.':'  .$this->hours;
+
+
+            
+            }
+
+        
     }
 
 }

@@ -13,7 +13,7 @@ Program.prototype.onClickAttaque = function(event) {
 
 
 	console.log(this);
-<<<<<<< HEAD
+
 
 	this.jacob.attaque(this.fabien);
 	$('.image #jacob').addClass("attaque");
@@ -69,7 +69,7 @@ Program.prototype.onClickSort = function(event){
 Program.prototype.fabienAttaque = function(){
 	var choice = getRandomInteger(0, 3);
 
-=======
+
 	this.jacob.attaque(this.fabien);
 
 	var choice = getRandomInteger(0, 3);
@@ -85,7 +85,7 @@ if(choice == 1){
 
 }
 
-Program.prototype.onClickDefend = function(event){
+/*Program.prototype.onClickDefend = function(event){
 	event.preventDefault();
 	this.jacob.defense();
 
@@ -119,7 +119,7 @@ Program.prototype.onClickSort = function(event){
 
 
 
-/*function fabien(){
+function fabien(){
 	var choice = getRandomInteger(0, 3);
 
 >>>>>>> dae2cc975741098fa62b8f3ed6b1c4a775b159f2
@@ -138,7 +138,7 @@ Program.prototype.afficher = function(perso){
 
 	$('#perso1').html('<p>'+this.perso.nom+' pv=  '+perso.pv+' attaque =  '+ perso.ptsAttaque +' defense= '+ perso.ptsDef +' magie = '+ perso.ptsMagique +'</p>');
 		
-}
+}*/
 
 Program.prototype.stop = function(){
 	if(this.fabien.pv == 0 || this.fabien.pv < 0){
@@ -151,6 +151,6 @@ Program.prototype.stop = function(){
 }
 
 
-=======
-}*/
->>>>>>> dae2cc975741098fa62b8f3ed6b1c4a775b159f2
+
+
+
