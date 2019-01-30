@@ -1,0 +1,130 @@
+<form action="<?= $requestUrl ?>/user/register"   method="POST">
+	
+	<fieldset>
+		<legend>identité et coordonées</legend>
+		<ul>
+			<li>
+				<label for="firstName" name="firstName">Nom :</label>
+				<input id="firstName" type="text" name="firstName">
+
+			</li>
+			<li>
+				<label for="lastName" name="firstName">Prenom :</label>
+				<input id="lastName" type="text" name="lastName">
+				
+			</li>
+			<li>
+				<label for="birth" name="firstName">date de naissance :</label>
+				<select name="birthDay">
+					<?php for($i = 1;$i < 30;$i++) : ?>
+						<option value="<?= $i ?>">
+							<?= $i ?>
+						</option>
+					<?php endfor ?>
+				</select>
+				<select name="birthMonth">
+					<option value="1" >Janvier</option>
+					<option value="2" >Fevrier</option>
+					<option value="3" >Mars</option>
+					<option value="4" >Avril</option>
+					<option value="5" >Mai</option>
+					<option value="6" >Juin</option>
+					<option value="7" >Juillet</option>
+					<option value="8" >Aout</option>
+					<option value="9" >Septembre</option>
+					<option value="10" >Octobre</option>
+					<option value="11" >Novembre</option>
+					<option value="12" >Decembre</option>
+
+				
+				</select>
+				<select name="birthYear">
+					<?php for($i = 1940;$i < 2018;$i++) : ?>
+						<option value="<?= $i ?>">
+							<?=  $i ?>
+						</option>
+					<?php endfor ?>
+				</select>
+
+			</li>
+			<li>
+				<label for="adress" name="adress">Adresse :</label>
+				<textarea id="adress" name="adress"
+          					rows="5" cols="33">
+					
+				</textarea>
+
+			</li>
+			<li>
+				<label for="ville" name="ville">Ville :</label>
+				<input id="ville" type="ville" name="ville">
+
+			</li>
+			<li>
+				<label for="postalCode" name="postalCode">code postale :</label>
+				<input id="postalCode" type="postalCode" name="postalCode">
+
+			</li>
+			<li>
+				<label for="phone" name="phone">telephone :</label>
+				<input id="phone" type="phone" name="phone">
+
+			</li>
+
+
+
+		</ul>
+
+
+
+
+
+	</fieldset>
+	<fieldset>
+		<legend>Informations d'authentification </legend>
+		<li>
+				<label for="mail" name="mail">mail:</label>
+				<input id="mail" type="mail" name="mail">
+
+			</li>
+			<li>
+				<label for="psw" name="psw">mail :</label>
+				<input id="psw" type="password" name="psw">
+
+			</li>
+
+	</fieldset>
+
+
+
+
+
+<button type="submit">Crée le compte</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>

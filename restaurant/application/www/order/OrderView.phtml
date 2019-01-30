@@ -1,0 +1,44 @@
+
+<h1>passer une commande</h1>
+
+
+<form action="<?= $requestUrl ?>/order" method="">
+	
+	<fieldset>
+		<legend>Ajouter un article </legend>
+		<ul>
+			<li>
+				<label for="productName" name="productName">nom :</label>
+				<select id="select" name="productName">
+				<?php foreach($meals as $meal) : ?>
+			
+
+					<option id="lo" value="<?= $meal['Id']?>"><?=$meal['Name']?></option>
+				<?php endforeach ?>
+				</select>
+
+			</li>
+			<div id="order-form">
+				
+			</div>
+
+
+		</ul>
+		<ul>
+			<li>
+				<label for="quantity" name="quantity"> quantité</label>
+				<input id="quantity" type="text" name="quantity">
+			</li>
+		</ul>
+		<button id="ajouter">W</button>
+	</fieldset>
+	<fieldset>
+		<legend>recapitulatif de la commande</legend>
+		<div id="panier">
+			
+		</div>
+	</fieldset>
+
+</form>
+
+<script type="text/javascript" src="<?= $wwwUrl ?>/js/classes/MealAjax.class.js"></script>
