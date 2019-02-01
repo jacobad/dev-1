@@ -14,7 +14,7 @@ var MealAjax = function(){
 	
 	$('#select').on('change',this.mealInfo.bind(this));
 	$('#ajouter').on('click',this.storageInfo.bind(this));
-	$('#suprimer').on('click',this.removeOrder.bind(this));
+	$(document).on('click','#suprimer',this.removeOrder.bind(this));
 	
 
 	
@@ -123,12 +123,13 @@ MealAjax.prototype.showBuyMeal = function (){
 	
 	}
 
-MealAjax.prototype.removeOrder = function (event){
+MealAjax.prototype.removeOrder = function (){
 
-	var i = $('#suprimer ').event.currentTarget.data('id');
+	var i = $(this).data('id');
 	console.log(i);
 	 this.box.splice(i,1);
 	this.panier.saveDataToDomStorage('test',this.box);
+	this.showBuyMeal();
 
 
 }
