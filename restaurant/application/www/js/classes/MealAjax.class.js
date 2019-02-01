@@ -20,6 +20,7 @@ var MealAjax = function(){
 	
 }
 
+
 MealAjax.prototype.load = function() {
 	this.box = loadDataFromDomStorage('test');
 	if(this.box == null) {
@@ -116,17 +117,17 @@ MealAjax.prototype.showBuyMeal = function (){
 		tr.append('<td>'+this.box[i].quantity+'</td>');
 		tr.append('<td>'+this.box[i].SalePrice+'</td>');
 		tr.append('<td>'+this.box[i].SalePrice * this.box[i].quantity+'</td>');
-		tr.append('<button id="suprimer" type="button" data-id="'+this.box[i].Id+'">suprimer</button>');
+		tr.append('<button id="suprimer" type="button" data-id="'+ i+'">suprimer</button>');
 		$('#panier table').append(tr);
 
 
-	
+	console.log('lad', i);
 	}
 
-MealAjax.prototype.removeOrder = function (){
+MealAjax.prototype.removeOrder = function (event){
 
-	var i = $(this).data('id');
-	console.log(i);
+	var i = event.currentTarget.dataset.id
+	console.log('index',i);
 	 this.box.splice(i,1);
 	this.panier.saveDataToDomStorage('test',this.box);
 	this.showBuyMeal();

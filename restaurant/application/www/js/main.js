@@ -13,3 +13,5 @@
 console.log('la');
 
 var meal = new MealAjax();
+var payment = new Payment();
+payment.recap();

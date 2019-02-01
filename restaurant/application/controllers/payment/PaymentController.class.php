@@ -1,5 +1,5 @@
 <?php
-class HomeController
+class PaymentController
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
@@ -9,13 +9,7 @@ class HomeController
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
     	 */
-        $meal = new MealModel();
-        $allmeal = $meal->meal();
-        var_dump($_SESSION);
-
-        return [
-            'meals' => $allmeal
-        ];
+       
     }
 
     public function httpPostMethod(Http $http, array $formFields)
@@ -26,5 +20,14 @@ class HomeController
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $formFields contient l'équivalent de $_POST en PHP natif.
     	 */
+        $order = new OrderModel();
+        $mealId  = $order->getMealId($_POST);
+
+        var_dump($mealId);
+
+       
+
+
+
     }
 }

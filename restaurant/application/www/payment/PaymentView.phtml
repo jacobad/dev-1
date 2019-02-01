@@ -1,0 +1,30 @@
+
+<ul>
+	<li><?= $_SESSION['firstName']?><?= $_SESSION['lastName']?></li>
+	<li><?= $_SESSION['Adress']?></li>
+	<li><?= $_SESSION['PostalCode']?><?= $_SESSION['City']?></li>
+	</li>
+</ul>
+<div id="recap"> 
+
+</div>
+
+
+<p>commandé le </p>
+<form action="" method="POST">
+<h2>Merci de bien vouloir procéder au paiement de la commande</h2>
+
+<a href="">payer</a>
+<a href="<?= $requestUrl ?>/order">annuler</a>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="<?= $wwwUrl ?>/js/classes/Panier.class.js"></script>
+<script type="text/javascript" src="<?= $wwwUrl ?>/js/classes/MealAjax.class.js"></script>
+<script type="text/javascript" src="<?= $wwwUrl ?>/js/classes/Payment.class.js"></script>
