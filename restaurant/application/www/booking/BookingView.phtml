@@ -1,0 +1,90 @@
+
+
+
+
+<form action="<?= $requestUrl ?>/booking" method="POST">
+
+	<h1> Reserver une table</h1>
+
+	<fieldset>
+		<legend>information</legend>
+		<label for="date" name="date">Date de réservation</label>
+		<ul>
+			<li>
+				<select name="day">
+							<?php for($i = 1;$i < 30;$i++) : ?>
+								<option value="<?= $i ?>">
+									<?= $i ?>
+								</option>
+							<?php endfor ?>
+						</select>
+						<select name="Month">
+							<option value="1" >Janvier</option>
+							<option value="2" >Fevrier</option>
+							<option value="3" >Mars</option>
+							<option value="4" >Avril</option>
+							<option value="5" >Mai</option>
+							<option value="6" >Juin</option>
+							<option value="7" >Juillet</option>
+							<option value="8" >Aout</option>
+							<option value="9" >Septembre</option>
+							<option value="10" >Octobre</option>
+							<option value="11" >Novembre</option>
+							<option value="12" >Decembre</option>
+
+						
+						</select>
+						<select name="Year">
+							<?php for($i = 2018;$i < 2020;$i++) : ?>
+								<option value="<?= $i ?>">
+									<?=  $i ?>
+								</option>
+							<?php endfor ?>
+						</select>
+
+						<select name="hour">
+							<?php for($i = 12;$i < 24;$i++) : ?>
+								<option value="<?= $i ?>">
+									<?=  $i ?>
+								</option>
+							<?php endfor ?>
+						</select>
+
+							<select name="min">
+							<option value="00" >00</option>
+							<option value="15" >15</option>
+							<option value="30" >30</option>
+							<option value="45" >45</option>
+							
+
+						
+						</select>
+
+
+			</li>
+			<li>
+				<label for="couvert" name="couvert">Date de réservation</label>
+				<select name="couvert">
+							<?php for($i = 1;$i < 9;$i++) : ?>
+								<option value="<?= $i ?>">
+									<?=  $i ?>
+								</option>
+							<?php endfor ?>
+						</select>
+
+			</li>
+		</ul>
+
+	</fieldset>
+
+	<button type="submit" > envoyer</button>
+
+	<button type="button" > annuler</button>
+	
+
+
+
+
+
+
+</form>

@@ -3,6 +3,7 @@ var Payment = function(){
 
 this.meal = new MealAjax();
 this.totalPrice = null;
+this.confirmPayment();
 
 
 }
@@ -34,5 +35,14 @@ Payment.prototype.recap = function (){
 	$('#recap table').append('<tr><td>Prix total</td><td>'+(this.totalPrice + (this.totalPrice*0.20)) +'</td></tr>');
 
 
+}
+
+
+Payment.prototype.confirmPayment = function(){
+
+	this.meal.load();
+	json = JSON.stringify(this.meal.box);
+
+	$('#confirm').attr('value',''+json+'');
 }
 //json_decode($_POST[]) pour decode le json en php
