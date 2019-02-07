@@ -1,5 +1,5 @@
 <?php
-class PaymentController
+class CreditCardController
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
@@ -10,6 +10,12 @@ class PaymentController
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
     	 */
        var_dump('la');
+
+       $orderId = $_GET['orderId'];
+
+       return [
+        'orderId'=>$orderId
+       ];
     }
 
     public function httpPostMethod(Http $http, array $formFields)
@@ -21,32 +27,7 @@ class PaymentController
     	 * L'argument $formFields contient l'équivalent de $_POST en PHP natif.
     	 */
       
-        $orderTotal = json_decode($_POST['orderTotal']);
- 		$mealModel = new MealModel();
- 		$payment = new PaymentModel();
-
-       $orderId = $payment->orderId($_SESSION);
-
- 		for($i= 0;$i < count($orderTotal);$i++){
-	 		
-	 		$id = $orderTotal[$i]->Id;
-	         var_dump($id);
-	        $meal  = $mealModel->getMealId($id);
-	       
-	       
-	        
-	        $orderTotal[$i]->safeSalePrice = $meal['SalePrice'];
-	        
-	        $payment->order($orderTotal[$i]);
-	        
-	        
-
-
-        }
-
-        $payment->orderUpdate();
-
-        $http->redirectTo('/Creditcard?orderId='.$orderId); 
+      
 
 
     }
