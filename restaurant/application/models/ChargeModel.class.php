@@ -9,4 +9,16 @@ class ChargeModel {
 
 		return $order;
 	}
+	public function updateStatus($orderId) {
+        $database = new Database();
+
+        // Insertion de la commande dans la base de donées.
+        $order = $database->queryOne
+        (
+            'UPDATE `Order` SET Status = "payed" WHERE Id =?',
+            [ $orderId ]
+        );
+        
+    }
+    
 }

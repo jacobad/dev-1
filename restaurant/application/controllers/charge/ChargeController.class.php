@@ -27,6 +27,7 @@ class ChargeController
 
     	$chargeModel = new ChargeModel();
     	$order = $chargeModel->getOneOrder($orderId);
+    	
 
     	$totalTTC = floatval($order['TotalAmount']) + floatval($order['TaxeAmount']);
 
