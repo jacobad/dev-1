@@ -1,0 +1,27 @@
+<aside class="aside">
+	<ul>
+		<li><a href="<?= $requestUrl ?>/products/boutique?id=<?=$_SESSION['user']['id']?>">Ajoutez un produit</a></li>
+		<li>followers</li>
+		<li>boutique</li>
+		<li>info</li>
+	</ul>
+</aside>
+
+
+<section id="profil"> 
+<?php if(empty($_SESSION['user']['photoProfil'])==false) :?>
+
+	<img src="../../membres/photoprofil/<?= $_SESSION['user']['photoProfil'] ?> " width ="150">
+<?php endif ?>
+
+<?php if(empty($_SESSION['user']['photoProfil'])==true) :?>
+<form action="<?= $requestUrl ?>/users/userhome " method="POST" enctype="multipart/form-data">
+	<label for="photoProfil" name="photoProfil">Ajoutez une photo de profil</label>
+	<input name="photoProfil" type="file" />
+
+	<input type="submit" value="Envoyer le fichier" />
+	
+</form>
+<?php endif ?>
+
+</section>

@@ -9,13 +9,15 @@ class RegisterModel
 		$database = new Database();
 
 		$database->executeSql(
-			'INSERT INTO users(FirstName,LastName,	NickName,Mail,	Password,CreationTimeStamp) Values(?,?,?,?,?,NOW()) ',
+			'INSERT INTO users(FirstName,LastName,	NickName,Mail,	Password,CreationTimeStamp,statue) Values(?,?,?,?,?,NOW(),statue) ',
 			[
 				$post['firstName'],
 				$post['lastName'],
 				$post['nickName'],
 				$post['mail'],
-				$this->hashPassword($post['password'])
+				$this->hashPassword($post['password'],
+				$post['statue']
+			)
 
 
 

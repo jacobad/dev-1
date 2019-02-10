@@ -5,5 +5,5 @@
  */
 
 $config['dsn']      = 'mysql:host=localhost;dbname=smartBuy';
-$config['password'] = 'troiswa';
+$config['password'] = '';
 $config['user']     = 'root';

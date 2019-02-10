@@ -1,6 +1,6 @@
-<?php
+<?php 
 
-class HomeController
+class UserhomeController
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
@@ -21,5 +21,28 @@ class HomeController
     	 * L'argument $formFields contient l'équivalent de $_POST en PHP natif.
     	 */
 
+        var_dump($_FILES);
+        
+        
+
+        $photoProfil = new UsersphotoModel();
+
+        $photoProfil->addPhotoProfil($_FILES , $_SESSION);
+
+       
     }
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+?>

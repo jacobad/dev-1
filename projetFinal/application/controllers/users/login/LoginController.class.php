@@ -1,6 +1,6 @@
-<?php
+<?php 
 
-class HomeController
+class LoginController
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
@@ -9,7 +9,7 @@ class HomeController
     	 *
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
-    	 */var_dump($_SESSION);
+    	 */
     }
 
     public function httpPostMethod(Http $http, array $formFields)
@@ -21,5 +21,29 @@ class HomeController
     	 * L'argument $formFields contient l'équivalent de $_POST en PHP natif.
     	 */
 
+        $register = new LoginModel();
+
+        $register->connectUser($_POST);
+
+        var_dump($_SESSION);
+        if(empty($_SESSION)== false){
+            $http->redirectTo('/users/userhome?id='.$_SESSION['user']['id']);
+        }else{
+            $http->redirectTo('/users/login');
+        }
     }
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+?>
