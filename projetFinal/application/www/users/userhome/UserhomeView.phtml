@@ -15,6 +15,10 @@
 <?php endif ?>
 
 <?php if(empty($_SESSION['user']['photoProfil'])==true) :?>
+
+
+
+	
 <form action="<?= $requestUrl ?>/users/userhome " method="POST" enctype="multipart/form-data">
 	<label for="photoProfil" name="photoProfil">Ajoutez une photo de profil</label>
 	<input name="photoProfil" type="file" />
@@ -25,3 +29,24 @@
 <?php endif ?>
 
 </section>
+
+<section id="tableauEdition">
+	<button type="button" id="divProduit">ajouter une div produit </button>
+	<button type="button" id="divtitre">ajouter une div titre </button>
+</section>
+
+
+<section id="newElement">
+	
+	<div id="show">
+		
+	</div>
+
+
+</section>
+
+
+<script src="<?= $wwwUrl ?>/js/classes/element.class.js"></script>
+<script type="text/javascript">
+
+</script>

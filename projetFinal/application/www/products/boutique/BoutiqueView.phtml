@@ -1,6 +1,6 @@
 <fieldset>
 	<legend> information produits </legend>
-	<form action="<?= $requestUrl ?>/products/boutique" method="POST" enctype="multipart/form-data">
+	<form  action="<?= $requestUrl ?>/products/boutique" method="POST" enctype="multipart/form-data">
 		<ul>
 			<li>
 				<label for="productName" name="productName">Nom produit </label>
@@ -13,7 +13,7 @@
 			</li>
 			<li>
 				<label for="productCategory" name="productCategory">category :</label>
-				<select name="productCategory" >
+				<select id="productCategory" name="productCategory" >
 					<option values="Automobile">Automobile</option>
 					<option values="Maison">Maison</option>
 					<option values="Informatique">Informatique</option>

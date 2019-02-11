@@ -1,1 +1,9 @@
-Product.class.js
+
+
+var Product = function (){
+
+
+
+
+
+}

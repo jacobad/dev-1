@@ -30,7 +30,7 @@ class UsersphotoModel
 				{
 					// je crée le chemin vers lequel sera upload la photo de profil de l'utilisateur
 
-					$chemin = "  membres/photoprofil/".$session['user']['id'].".".$extensionUpload ; 
+					$chemin = "membres/photoprofil/".$session['user']['id'].".".$extensionUpload ; 
 					
 					// je deplace le fichier de son emplacement temporaire dans le serveur à l'endroit ou je veux qu'il soit stocké.
 
@@ -50,6 +50,25 @@ class UsersphotoModel
 
 
 							]);
+
+
+						$user = $database->queryOne('
+							SELECT * FROM users WHERE Id = ? ',
+
+							[
+								$session['user']['id']
+
+
+							]);
+
+						$_SESSION['user']['id'] = $user['Id'];
+						$_SESSION['user']['firstName'] = $user['FirstName'];
+						$_SESSION['user']['lastName'] = $user['LastName'];
+						$_SESSION['user']['nickName'] = $user['NickName'];
+						$_SESSION['user']['mail'] = $user['Mail'];
+						$_SESSION['user']['statue'] = $user['statue'];
+						$_SESSION['user']['photoProfil'] = $user['photoProfil'];
+
 
 					}
 					else
@@ -103,7 +122,7 @@ class UsersphotoModel
 				{
 					// je crée le chemin vers lequel sera upload la photo de profil de l'utilisateur
 
-					$chemin = "  membres/photoProduct/".$session['user']['id'].".".$extensionUpload ; 
+					$chemin = "membres/photoProduct/".$session['user']['id'].".".$extensionUpload ; 
 					
 					// je deplace le fichier de son emplacement temporaire dans le serveur à l'endroit ou je veux qu'il soit stocké.
 
@@ -154,7 +173,7 @@ class UsersphotoModel
 
 
 
-public function addPhotoProduct($files,$session){
+public function addPhotoProduct($files,$session,$post){
 
 		//Je verifie que la valeur $_FILES de mon input file existe et si la clé name n'est pas vite 
 
@@ -193,11 +212,13 @@ public function addPhotoProduct($files,$session){
 					{
 						$database = new Database ();
 
-						$database->executeSql('INSERT INTO products(ProductPhoto,user_Id) VALUES(?,?) ',
+						$database->executeSql('INSERT INTO product(ProductPhoto,user_Id,ProductDescription,ProductName) VALUES(?,?,?,?) ',
 							[
 							
 								$files['photoProduct']['name'],
-								$session['user']['id']
+								$session['user']['id'],
+								$post['productDescription'],
+								$post['productName']
 
 
 
@@ -228,6 +249,8 @@ public function addPhotoProduct($files,$session){
 
 
 	}
+
+
 
 
 

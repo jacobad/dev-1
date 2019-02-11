@@ -1,6 +1,6 @@
 <?php 
 
-class UserhomeController
+class ElementsController
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
@@ -20,15 +20,15 @@ class UserhomeController
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $formFields contient l'équivalent de $_POST en PHP natif.
     	 */
-        var_dump($_SESSION);
+        //var_dump($_SESSION);
 
-        var_dump($_FILES);
+       // var_dump($_FILES);
         
-        
+        echo json_encode($_FILES);
 
-        $photoProfil = new UsersphotoModel();
+        //$photoProfil = new UsersphotoModel();
 
-        $photoProfil->addPhotoProfil($_FILES , $_SESSION);
+       // $photoProfil->addPhotoProduct($_FILES , $_SESSION,$_POST);
 
        
     }
