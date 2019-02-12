@@ -22,7 +22,7 @@ class BoutiqueController
             $products = $database->query($sql, $execute);
 
 
-             $http->sendJsonResponse($products);
+            // $http->sendJsonResponse($products);
 
 
         } else if (array_key_exists('id', $_GET) == true) {
