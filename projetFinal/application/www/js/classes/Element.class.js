@@ -5,23 +5,25 @@ var Element = function () {
 
 	$('#divProduit').on('click',this.addDivProduit.bind(this));
 	//$(document).on('click','#send',this.show_infoProduit.bind(this));
-	this.show_infoProduit;
+	$('#apercus').on('click',this.show_infoProduit.bind(this));
+
 }
 Element.prototype.addDivProduit = function()
 {
 	$('#showform').empty();
 	$('#showForm').append('<div id="product">');
-	$('#showForm').append('<fieldset><legend> information produits </legend><form action="'+getRequestUrl()+'/editpage" method="POST" id="form" enctype="multipart/form-data"><ul><li><label for="productName" name="productName">Nom produit </label><input id="productName"  name="productName" type="text"></li><li><label for="ProductQuantity" name="ProductQuantity">Quantité :</label><input id="ProductQuantity"  name="ProductQuantity" type="text"></li><li><label for="ProductPrice" name="ProductPrice">Prix : </label><input id="ProductPrice"  name="ProductPrice" type="text"></li><li><label for="productDescription" name="productDescription">description produit :  </label><textarea id="productDescription"  name="productDescription" ></textarea></li><li><label for="productCategory" name="productCategory">category :</label><select id="productCategory" name="productCategory" ><option values="Automobile">Automobile</option><option values="Maison">Maison</option><option values="Informatique">Informatique</option><option values="Jeux-videos">Jeux-videos</option><option values="Sport">Sport</option><option values="Autre">Autre</option></select></li><li><label for="photoProduct" name="photoProduct">Ajoutez une photo du produit </label><input id="photoProduct" name="photoProduct" type="file" /><input id="send" type="submit" value="Envoyer le fichier" /></li>');
+	$('#showForm').append('<fieldset><legend> information produits </legend><form action="'+getRequestUrl()+'/edit" method="POST" id="form" enctype="multipart/form-data"><ul><li><label for="productName" name="productName">Nom produit </label><input id="productName"  name="productName" type="text"></li><li><label for="ProductQuantity" name="ProductQuantity">Quantité :</label><input id="ProductQuantity"  name="ProductQuantity" type="text"></li><li><label for="ProductPrice" name="ProductPrice">Prix : </label><input id="ProductPrice"  name="ProductPrice" type="text"></li><li><label for="productDescription" name="productDescription">description produit :  </label><textarea id="productDescription"  name="productDescription" ></textarea></li><li><label for="productCategory" name="productCategory">category :</label><select id="productCategory" name="productCategory" ><option values="Automobile">Automobile</option><option values="Maison">Maison</option><option values="Informatique">Informatique</option><option values="Jeux-videos">Jeux-videos</option><option values="Sport">Sport</option><option values="Autre">Autre</option></select></li><li><label for="photoProduct" name="photoProduct">Ajoutez une photo du produit </label><input id="photoProduct" name="photoProduct" type="file" /><input id="send" type="submit" value="Envoyer le fichier" /></li>');
 	//$.getJSON(getRequestUrl()+'/editpage',this.show_infoProduct.bind(this));
 }
 Element.prototype.show_infoProduit = function ()
-{
-	$.getJSON(getRequestUrl()+'/editpage',this.show_infoProduct.bind(this));
+{ console.log('la');
+	console.log(getRequestUrl()+'/edit');
+	$.getJSON(getRequestUrl()+'/edit',this.show_infoProduct.bind(this));
 
 }
 Element.prototype.show_infoProduct = function(response)
 {
-	console.log(response);
+	console.log('response');
 }
 
 /*Element.prototype.showProduit = function ()

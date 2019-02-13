@@ -1,5 +1,7 @@
 <section id="editTable">
 	<button type="button" id="divProduit">ajouter une div produit</button>
+	<button type="button" id="apercus">apercus</button>
+
 </section>
 
 
@@ -14,7 +16,18 @@
 
 
 <section id="showElement" width="800px" height="900px">
-	
+	<?php foreach ($prod as $produit) : ?>
+		<div id= <?=$produit['Id'] ?> class="move" width="200px" height="100px" >
+			<img src="../membres/photoProduct/<?=$produit['ProductPhoto']?>.jpg">
+			<p><?=$produit['ProductDescription']?></p>
+			<p><?=$produit['ProductPrice']?></p>
+			<p><?=$produit['ProductQuantity']?></p>
+
+
+
+		</div>
+
+	<?php endforeach ?>
 	
 </section>
 
@@ -24,3 +37,4 @@
 
 
 <script src="<?= $wwwUrl ?>/js/classes/Element.class.js"></script>
+<script src="<?= $wwwUrl ?>/js/classes/MovingElement.class.js"></script>

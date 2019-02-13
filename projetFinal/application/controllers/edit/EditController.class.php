@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-class EditpageController
+class EditController
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
@@ -9,19 +9,7 @@ class EditpageController
     	 *
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
-    	 */    
-
-            //charger tous les articles en fonction user
-
-        $edit = new EditpageModel();
-        $prod = $edit->recupPhoto($_SESSION);
-
-        var_dump($prod);
-
-        return [
-            'prod' => $prod
-        ];
-
+    	 */var_dump($_SESSION);
     }
 
     public function httpPostMethod(Http $http, array $formFields)
@@ -32,21 +20,17 @@ class EditpageController
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $formFields contient l'équivalent de $_POST en PHP natif.
     	 */
-           
-   
-       
+
+           $edit = new EditpageModel();
+
+            $edit->addPhotoProduct($_FILES,$_SESSION,$_POST);
+
+           // $prod = $edit->recupPhoto($_SESSION);
+          //  $http->sendJsonResponse($prod);
+
+
     }
-
-
-
-
-
 }
-
-
-
-
-
 
 
 

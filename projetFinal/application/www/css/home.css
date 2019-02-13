@@ -35,3 +35,20 @@ header #logo {
 	list-style: none;
 	
 }
+
+#showElement{
+	display: flex;
+	position: relative;
+	width: 900px;
+	height:3000px;
+}
+
+.move {
+	/*position:absolute;*/
+	width:200px;
+
+}
+
+.move img{
+	width:100%;
+}

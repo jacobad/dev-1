@@ -13,3 +13,4 @@
 
 
 var elt = new Element();
+var move = new MovingElement();
