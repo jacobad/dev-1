@@ -24,11 +24,11 @@ class ElementsController
 
        // var_dump($_FILES);
         
-        echo json_encode($_FILES);
+        $product = new EditpageModel();
+        $product->defineProductPosition($_POST);
 
         //$photoProfil = new UsersphotoModel();
 
-       // $photoProfil->addPhotoProduct($_FILES , $_SESSION,$_POST);
 
        
     }
