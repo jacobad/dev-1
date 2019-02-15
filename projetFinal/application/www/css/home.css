@@ -71,12 +71,17 @@ header #logo {
 
 }
 
+.map_image path a .is-active{
+
+	fill:red;
+}
+
 .map_list{
 	float:right;
 	width:50%;
 }
 
-.map_list a{
+.is-active{
 
 	color:inherit;
 

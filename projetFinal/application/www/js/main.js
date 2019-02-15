@@ -12,5 +12,6 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 
 
-var elt = new Element();
-var move = new MovingElement();
+//var elt = new Element();
+//var move = new MovingElement();
+var svg = new Map();
