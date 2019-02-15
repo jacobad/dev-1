@@ -15,11 +15,13 @@ class EditpageController
 
         $edit = new EditpageModel();
         $prod = $edit->recupPhoto($_SESSION);
+        $text = $edit->recupText($_SESSION);
 
         var_dump($prod);
 
         return [
-            'prod' => $prod
+            'prod' => $prod,
+            'text' => $text
         ];
 
     }

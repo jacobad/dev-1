@@ -136,7 +136,7 @@ class UsersphotoModel
 
 						$database->executeSql('UPDATE products SET PhotoProduct = ? WHERE Id=?',
 							[
-								$session['user']['id'].".".$extensionUpload ,
+								 $session['user']['id'].".".$extensionUpload ,
 								$session['user']['id']
 
 

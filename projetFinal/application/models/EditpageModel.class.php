@@ -11,6 +11,17 @@ class EditpageModel{
 		return $produit ;
 	}
 
+
+	public function recupText($session)
+	{
+
+		$database = new Database ();
+		$text = $database->query('SELECT * FROM `Text` where user_Id = ? ',[$session['user']['id']]);
+
+		return $text;
+
+	}
+
 	public function defineProductPosition ($post){
 
 		$database = new Database ();

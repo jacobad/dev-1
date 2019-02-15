@@ -22,8 +22,10 @@ class EditController
     	 */
 
            $edit = new EditpageModel();
+           $element = new ElementsModel();
 
             $edit->addPhotoProduct($_FILES,$_SESSION,$_POST);
+            $element->addText($_POST,$_SESSION);
             $http->redirectTo('/editpage');
            // $prod = $edit->recupPhoto($_SESSION);
           //  $http->sendJsonResponse($prod);

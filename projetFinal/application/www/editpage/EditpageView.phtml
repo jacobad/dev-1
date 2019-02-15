@@ -1,5 +1,8 @@
 <section id="editTable">
 	<button type="button" id="divProduit">ajouter une div produit</button>
+	<button type="button" id="divText">ajouter un texte</button>
+	<button type="button" id="divImage">ajoutez une image</button>
+	<button type="button" id="divTitre">ajouter un titre</button>
 	<button type="button" id="apercus">apercus</button>
 
 </section>
@@ -26,6 +29,20 @@
 
 
 		</div>
+
+
+
+	<?php endforeach ?>
+
+	<?php foreach ($text as $Text) : ?>
+		<div style="top:<?= $Text['PositionY']?>;left:<?= $Text['PositionX']?> ;position:absolute" id= <?=$Text['id'] ?> class="move" >
+	
+		<pre><?=$Text['Text']?></pre>
+
+
+		</div>
+
+
 
 	<?php endforeach ?>
 	
