@@ -9,7 +9,12 @@ class EditController
     	 *
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
-    	 */var_dump($_SESSION);
+    	 */
+        $edit = new EditpageModel();
+        $edit->deletProduct($_GET);
+        $http->sendJsonResponse($prod);
+
+
     }
 
     public function httpPostMethod(Http $http, array $formFields)
@@ -26,9 +31,9 @@ class EditController
 
             $edit->addPhotoProduct($_FILES,$_SESSION,$_POST);
             // $element->addText($_POST,$_SESSION);
-            $http->redirectTo('/editpage');
-           // $prod = $edit->recupPhoto($_SESSION);
-          //  $http->sendJsonResponse($prod);
+            //$http->redirectTo('/editpage');
+            $prod = $edit->recupPhoto($_SESSION);
+           $http->sendJsonResponse($prod);
 
 
     }
