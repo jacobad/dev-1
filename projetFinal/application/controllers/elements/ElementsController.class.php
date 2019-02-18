@@ -23,9 +23,11 @@ class ElementsController
         //var_dump($_SESSION);
 
        // var_dump($_FILES);
-        
+        $element = new ElementsModel();
         $product = new EditpageModel();
         $product->defineProductPosition($_POST);
+
+         $element->updateText($_POST,$_SESSION);
 
         //$photoProfil = new UsersphotoModel();
 

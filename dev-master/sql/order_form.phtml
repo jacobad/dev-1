@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" href="order_form.css">
+	</head>
+	<body>
+		<h1>Bon de commande</h1>
+		<a href="bondecommande.php">retour à l'acceuil</a>
+		<div>
+		<from method="POST" action="order_search.php"><input type="search" name="ser"></from>
+		
+		<p><?= $info_customer['customerName'] ?></p>
+		<p><?= $info_customer['contactFirstName'].$info_customer['contactLastName']  ?></p>
+		<p><?= $info_customer['addressLine1'] ?></p>
+		<p><?= $info_customer['city'] ?> </p>
+		</div>
+
+		<h2 class="center">Bon de commande n°<?= $_GET['orderNumber']?></h2>
+
+
+		<table>
+			<?php foreach ($info_product as  $value_prod) :
+			?>
+			<tr>
+				<td><?= $value_prod['productName']?></td>
+				<td><?= $value_prod['priceEach']?></td>
+				<td><?= $value_prod['quantityOrdered']?></td>
+				<td><?= $value_prod['total']?></td>
+			</tr>
+			<?php endforeach ?>
+			<tr>
+				<td class="col" colspan="3">Montant total ht</td>
+				<td><?= $prix['total'] ?></td>
+
+			</tr>
+			<tr>
+				<td class="col" colspan="3">Montant total ht</td>
+				<td><?= $prixht = $prix['total']*0.20 ?></td>
+			</tr>
+			<tr>
+				<td class="col" colspan="3">Montant total ht</td>
+				<td><?= $prixht+ $prix['total']?></td>
+			</tr>
+		
+		</table>
+
+
+
+
+
+		
+	</body>
+</html>

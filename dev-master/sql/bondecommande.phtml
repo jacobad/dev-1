@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" href="bondecommande.css">
+	</head>
+	<body>
+		<h1>Bon de commande</h1>
+		<h2>listes de commande</h2>
+
+		<table>
+		<tr class="back">
+			<th>commande</th>
+			<th> date de la commande</th>
+			<th> date de la livraison</th>
+			<th>status</th>
+		</tr>
+
+
+		<?php
+		 foreach ($commande as  $value) :?>
+		 <tr> 
+		 	<td><a href="order_form.php?orderNumber=<?= $value['orderNumber'] ?>"><?= $value['orderNumber'] ?> </a></td>
+		 	<td class="col" ><?= $value['orderDate'] ?></td>
+		 	<td class="col"><?= $value['shippedDate'] ?></td>
+		 	<td class="col"><?= $value['status'] ?></td>
+		 </tr>
+		<?php endforeach?>
+		</table>
+	</body>
+</html>

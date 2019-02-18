@@ -14,8 +14,10 @@ class EditpageController
             //charger tous les articles en fonction user
 
         $edit = new EditpageModel();
+        $element = new ElementsModel();
         $prod = $edit->recupPhoto($_SESSION);
-        $text = $edit->recupText($_SESSION);
+       
+        $text = $element->recupText($_SESSION);
 
         var_dump($prod);
 

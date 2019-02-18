@@ -1,0 +1,22 @@
+.rectangle{
+	width:400px;
+	height:300px;
+	background-color: #002366;
+	border-radius: 1em;
+	transition: background-color 0.8s; /*transition gere le temps de changement du background color */
+
+}
+
+.hidden{
+	display: none;
+}
+
+
+.good {
+	background-color: #b22222;
+}
+
+
+.important{
+	background-color: #32CD32;
+}

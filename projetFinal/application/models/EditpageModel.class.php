@@ -6,26 +6,17 @@ class EditpageModel{
 	public function recupPhoto($session)
 	{
 		$database = new Database ();
-		$produit = $database->query('SELECT * FROM product where user_Id = ? ',[$session['user']['id']]);
+		$produit = $database->query('SELECT * FROM products where user_Id = ? ',[$session['user']['id']]);
 
 		return $produit ;
 	}
 
 
-	public function recupText($session)
-	{
-
-		$database = new Database ();
-		$text = $database->query('SELECT * FROM `Text` where user_Id = ? ',[$session['user']['id']]);
-
-		return $text;
-
-	}
 
 	public function defineProductPosition ($post){
 
 		$database = new Database ();
-		$produit = $database->executeSql('UPDATE product SET PositionX=?,
+		$produit = $database->executeSql('UPDATE products SET PositionX=?,
 			PositionY=? WHERE Id=?',
 			[
 
@@ -76,12 +67,12 @@ class EditpageModel{
 						{
 							$database = new Database ();
 
-							$database->executeSql('INSERT INTO product(ProductPhoto,user_Id,ProductDescription,ProductName,ProductPrice,ProductQuantity) VALUES(?,?,?,?,?,?) ',
+							$database->executeSql('INSERT INTO products(ProductPhoto,user_Id,ProductDescription,ProductName,ProductPrice,ProductQuantity) VALUES(?,?,?,?,?,?) ',
 								[
 								
 									$files['photoProduct']['name'],
 									$session['user']['id'],
-									$post['productDescription'],
+									$post['ProductDescription'],
 									$post['productName'],
 										$post['ProductPrice'],
 									$post['ProductQuantity'],

@@ -1,0 +1,24 @@
+.couleur{
+	background-color: yellow;
+}
+
+tr{
+	background-color:white;
+}
+
+td {
+	color: red;
+	width:30px;
+	height:30px;
+	border:1px solid purple;
+	text-align: center;
+	background-color: pink;
+	border-collapse: collapse;
+}
+
+.couleur:hover {
+	width:60px;
+	height: 60px;
+	position: absolute;
+	line-height: 4;
+}

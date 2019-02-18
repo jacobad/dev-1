@@ -1,0 +1,27 @@
+body{
+	text-align: center;
+	width:800px;
+	margin: auto;
+}
+
+.taille{
+	width:90%;
+	margin:1em;
+}
+
+.taille1{
+	width:29%;
+}
+
+.cool{
+	display: none;
+}
+.recap{
+	list-style:  none;
+}
+
+.recap label:hover + p {
+	display:block;
+	color: red;
+
+}

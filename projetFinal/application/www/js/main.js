@@ -11,7 +11,7 @@
 // CODE PRINCIPAL                                                                      //
 /////////////////////////////////////////////////////////////////////////////////////////
 
-
+var request  = new RequeteSend();
 var elt = new Element();
 var move = new MovingElement();
 //var svg = new Map();
