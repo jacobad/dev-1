@@ -2,8 +2,12 @@
 
 var RequeteSend = function()
 {
+   
+
+	this.itemId ; 
 
 	$(document).on('click','#send',this.sendProduit.bind(this));
+	$(document).on('click','#delete',this.deleteProduit.bind(this));
 
 }
 
@@ -31,8 +35,8 @@ RequeteSend.prototype.sendProduit = function()
 }
 
 RequeteSend.prototype.deleteProduit = function(){
-
-
+	this.itemId = event.currentTarget.getAttribute("data-id");
+	console.log(this.itemId);
 
 }
 
@@ -48,6 +52,7 @@ var i;
 
 	  for(i = 0;i< res.length ; i++){
 
+		
 	  	if (res[i].PositionY != null) {
 	  		$('#showElement').append('<div style=" top : '+res[i].PositionY+'; left : '+res[i].PositionX+'; position:absolute" id="'+res[i].Id+'" class="move" width ="200px" height="100px"></div>');
 
@@ -60,11 +65,13 @@ var i;
 	  	$('#showElement #'+res[i].Id+'').append('<p>Description : '+res[i].ProductDescription+' </p>');
 	  	$('#showElement #'+res[i].Id+'').append('<p>Prix : '+res[i].ProductPrice+' </p>');
 	  	$('#showElement #'+res[i].Id+'').append('<p>Prix : '+res[i].ProductQuantity+' </p>');
-	  	$('#showElement #'+res[i].Id+'').append('<a href="'+getRequestUrl()+'/edit?id='+res[i].Id+'">supprimer</a>');
+	  	$('#showElement #'+res[i].Id+'').append('<button id="delete" data-id="'+res[i].Id+'">supprimer</button>');
 	  	
 
 	
 	}
 }
+
+
 
 	//$.getJSON(getRequestUrl()
