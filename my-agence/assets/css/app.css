@@ -1,0 +1,19 @@
+body {
+    background-color: lightgray;
+}
+#nav{
+    background-color: #7C7799;
+}
+#homePresentation {
+  
+    background-image: url('../../public/img/bg-home.jpg');
+    background-position: bottom center;
+
+}
+
+.picturesShow{
+    display:none;
+}
+
+
+

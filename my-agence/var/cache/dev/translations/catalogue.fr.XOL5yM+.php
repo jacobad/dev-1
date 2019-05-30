@@ -115,6 +115,11 @@ $catalogue = new MessageCatalogue('fr', array (
     'label_previous' => 'Précédent',
     'label_next' => 'Suivant',
   ),
+  'VichUploaderBundle' => 
+  array (
+    'download' => 'Télécharger',
+    'form.label.delete' => 'Supprimer ?',
+  ),
   'forms' => 
   array (
     'City' => 'Ville',
